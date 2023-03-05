@@ -3,7 +3,7 @@
 ## Filelist Gene
 
 ```shell
-find ./ -name “.v" -or -name ".sv” >> filelist.f
+find . -type f -regex ".*\.\(v\|sv\)" > ivfiles.f
 ```
 
 
