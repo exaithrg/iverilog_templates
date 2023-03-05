@@ -8,24 +8,24 @@ IVERILOG_FLAGS += -g2005-sv
 
 all:
 	find . -type f -regex ".*\.\(v\|sv\)" > ivfiles.f
-	$(IVERILOG) $(IVERILOG_FLAGS) -o $(TOPNAME) -f ivfiles.f -s $(TOPNAME)
+	$(IVERILOG) $(IVERILOG_FLAGS) -o $(TOPNAME).out -f ivfiles.f -s $(TOPNAME)
 
 # .PHONY: files
 # files:
 #     find ./ -name "*.[v|sv]" > ivfiles.f
 
 sim: all
-	vvp -n $(TOPNAME) -l err.log >> run.log
+	vvp -n $(TOPNAME).out -l err.log >> run.log
 	# ./$(TOPNAME)
 
 wave: sim
 	gtkwave ./dump.vcd &
 	
 clean:
-	rm -rf $(TOPNAME)
+	rm -rf $(TOPNAME).out
 	rm dump.vcd
 	# rm run.log
-
+	
 wv: wave
 
 cl: clean
