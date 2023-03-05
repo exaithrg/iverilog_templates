@@ -14,11 +14,11 @@ all:
 # files:
 #     find ./ -name "*.[v|sv]" > ivfiles.f
 
-sim:
+sim: all
 	vvp -n $(TOPNAME) -l err.log >> run.log
 	# ./$(TOPNAME)
 
-wave:
+wave: sim
 	gtkwave ./dump.vcd &
 	
 clean:
