@@ -14,18 +14,21 @@ all:
 # files:
 #     find ./ -name "*.[v|sv]" > ivfiles.f
 
-.PHONY: sim
 sim:
 	vvp -n $(TOPNAME) -l err.log >> run.log
 	# ./$(TOPNAME)
 
-.PHONY: wv
-wv:
+wave:
 	gtkwave ./dump.vcd &
 	
-.PHONY: cl
-cl:
+clean:
 	rm -rf $(TOPNAME)
 	rm dump.vcd
 	# rm run.log
+
+wv: wave
+
+cl: clean
+
+.PHONY: sim wave wv clean cl
 
