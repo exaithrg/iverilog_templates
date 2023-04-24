@@ -4,6 +4,31 @@
 
 
 
+## How to install
+
+```
+unzip iverilog12.0.zip
+cd iverilog
+sh autoconf.sh
+./configure
+make
+make check
+sudo make install
+iverilog –v
+cd ..
+rm -r iverilog
+```
+
+
+
+### Ref
+
+```
+/home/geng/D/ICAIS/projects/IBEXIII/LinuxOnly/自测试样例运行方法
+```
+
+
+
 ## Filelist Gene
 
 ```shell
@@ -27,3 +52,8 @@ https://blog.csdn.net/q774318039a/article/details/126021890
 /home/geng/D/Manuals/IC_Design/gtkwave
 ```
 
+
+
+# Thanks
+
+https://github.com/steveicarus/iverilog
