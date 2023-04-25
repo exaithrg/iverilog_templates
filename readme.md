@@ -6,7 +6,7 @@
 
 ## How to install
 
-```
+```shell
 unzip iverilog12.0.zip
 cd iverilog
 sh autoconf.sh
@@ -14,6 +14,7 @@ sh autoconf.sh
 make
 make check
 sudo make install
+# If Permission denied: chmod +x mkinstalldirs
 iverilog –v
 cd ..
 rm -r iverilog
